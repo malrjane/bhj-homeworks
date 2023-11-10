@@ -11,24 +11,23 @@ for (let index = 1; index < 10; index++) {
 	hole.onclick = () => {
 		if (hole.classList.contains('hole_has-mole')) {
 			winCOunter += 1;
-			document.getElementById("dead").textContent = winCOunter;
-
 		} else {
 			loseCOunter += 1
-			document.getElementById("lost").textContent = loseCOunter;
-
 		};
 
 
 		if (winCOunter === 10) {
+			winCOunter = 0;
+			loseCOunter = 0;
 			alert("Win!")
-			winCOunter = 0;
-			loseCOunter = 0;
 		} else if (loseCOunter === 5) {
-			alert("Lose :(")
 			winCOunter = 0;
 			loseCOunter = 0;
+			alert("Lose :(")
 		}
+
+		document.getElementById("dead").textContent = winCOunter;
+		document.getElementById("lost").textContent = loseCOunter;
 	}
 }
 
