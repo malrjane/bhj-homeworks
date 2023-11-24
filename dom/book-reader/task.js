@@ -4,9 +4,6 @@ function getChildren(parentElement) {
 	return Array.from(parentElement.children);
 }
 
-let childrens = (getChildren(targetClick));
-
-
 function styleChanger(changeClassActive, newClass, dataAttr, element) {
 	document.querySelector(`.${changeClassActive}`).classList.remove(`${changeClassActive}`);
 	let removeItem = (document.querySelector(".book__content").className).split(" ").filter((item) => {
@@ -21,26 +18,25 @@ function styleChanger(changeClassActive, newClass, dataAttr, element) {
 	event.preventDefault();
 }
 
+let childrens = (getChildren(targetClick));
 childrens.forEach((element) => {
 	element.addEventListener("click", () => {
 		styleChanger("font-size_active", "book_fs-", "size", element);
 	})
 })
 
-childrens = (getChildren(document.querySelector(".book__control_color")));
 
+childrens = (getChildren(document.querySelector(".book__control_color")));
 childrens.forEach((element) => {
 	element.addEventListener("click", () => {
 		styleChanger("color_active", "book_color-", "text-color", element);
 	})
-
 })
 
-childrens = getChildren(document.querySelector(".book__control_background"));
 
+childrens = getChildren(document.querySelector(".book__control_background"));
 childrens.forEach((element) => {
 	element.addEventListener("click", () => {
 		styleChanger("color_active", "book_bg-", "bg-color", element);
 	})
-
 })
