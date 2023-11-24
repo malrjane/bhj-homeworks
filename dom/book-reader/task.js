@@ -1,7 +1,7 @@
 const targetClick = document.querySelector(".book__control_font-size");
 
 function getChildren(parentElement) {
-	return Array.from(parentElement.children);
+	return Array.from(parentElement.getElementsByTagName("a"));
 }
 
 function styleChanger(changeClassActive, newClass, dataAttr, element) {
